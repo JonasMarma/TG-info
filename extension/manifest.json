@@ -1,0 +1,39 @@
+{
+    "manifest_version": 3,
+    "name": "Semear",
+    "version": "3.0",
+
+    "web_accessible_resources": [{ 
+        "resources": [
+            "src/main.js",
+            "src/popup.js"
+        ],
+        "matches": [
+            "<all_urls>"
+        ]
+    }],
+    
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "content.js"
+            ]
+        }
+    ],
+
+    "background.service_worker": {
+        "scripts": [
+            "background.js"
+        ]
+    },
+
+    "action": {
+        "default_icon": "is.png",
+        "default_popup": "popup.html"
+    },
+
+    "devtools_page": "devtools.html"
+}
